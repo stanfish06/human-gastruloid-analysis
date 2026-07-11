@@ -1,0 +1,20 @@
+[project]
+name = "2d-gastruloid-analysis"
+version = "0.1.0"
+description = "Analysis of 2d human gastruloid scRNA-seq data, with integration to human and monkey"
+readme = "README.md"
+authors = [
+    { name = "Stan", email = "zyyu@umich.edu" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.6.1",
+    "notebook>=7.6.0",
+    "scanpy>=1.12.2",
+    "scvi-tools>=1.5.0.post1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"
