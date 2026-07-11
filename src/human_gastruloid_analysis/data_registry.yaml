@@ -5,13 +5,41 @@ IH-2025-nature:
   need_unzip: true
   checklist:
     1: adata_timeseries_old_48-96h.h5ad
+      description:
+        - 2D gastruloid data from day 2 to day 4 
+        - raw count
     2: adata_timeseries_old_48-96h_new_D6-10_filtered_qc.h5ad
+      description: 
+        - 2D gastruloid data from day 2 to day 10
+        - raw count
     3: 240925_adata_combined.h5ad
+      description: 
+        - 2D gastruloid data from day 2 to day 4 
+        - integrated (old, dont use)
+        - anndata.X is normalized (library size+log1p)
+        - highly variable genes selected
+        - anndata.raw has all genes, normalized (library size+log1p) 
     4: adata_timeseries_all_cc_hvg1000_leiden10_23_v3.h5ad
+      description: 
+        - 2D gastruloid data from day 2 to day 4 
+        - integrated (use this)
+        - anndata.X is normalized (library size+log1p)
+        - highly variable genes selected
+        - anndata.raw has all genes, normalized (library size+log1p) 
+        - X_scVI_cc is the scvi latent coordinates
     5: adata_2020_force_9000.h5ad
+      description: 
+        - first 42h gastruloid data
     6: adata_2021_BMP_contorl.h5ad
+      description: 
+        - second 42h gastruloid data
     7: MP_old_48-96h_new_D6-10_meta.csv
+      description: 
+        - meta for 2D gastruloid data from day 2 to day 10
+        - store in anndata.obs
     8: MP_old_48-96h_scvi_coords
+      description: 
+        - scvi latent coordinates for 2D gastruloid data from day 2 to day 4
 Zhai-2020-nature:
   subdir: Zhai-2022-nature-data
   link: https://www.nature.com/articles/s41586-022-05526-y
@@ -19,9 +47,19 @@ Zhai-2020-nature:
   need_unzip: true
   checklist:
     1: craig_new_monkey_meta_selected.h5ad
+      description: 
+        - CS8 monkey data
+        - raw count
+        - it was remapped, not the same count matrix as the original paper
     2: adata_integrate_to_monkey.h5ad
+      description: 
+        - integrated data with Tyser human, IH gastruloid, and Zhai CS8 monkey 
     3: MP_human_map2monkey_meta.csv
+      description: 
+        - meta after mapping Tyser human and IH gastruloid to Zhai CS8 monkey
     4: MP_human_map2monkey_scanvi_coords.csv
+      description: 
+        - scanvi coordinates after mapping Tyser human and IH gastruloid to Zhai CS8 monkey
 Zhai-2020-nature-ncbi:
   subdir: Zhai-2022-nature-data
   link: https://www.nature.com/articles/s41586-022-05526-y
@@ -29,7 +67,11 @@ Zhai-2020-nature-ncbi:
   need_unzip: false
   checklist:
     1: GSE193007_MFE-filtered_feature_bc_matrix.tar.gz
+      description: 
+        - raw file
     2: GSE193007_MFE56636-processed.tar.gz
+      description: 
+        - raw file
 Tyser-2021-nature:
   subdir: Tyser-2021-nature-data
   link: https://www.nature.com/articles/s41586-021-04158-y
@@ -37,4 +79,15 @@ Tyser-2021-nature:
   need_unzip: true
   checklist:
     1: human_ref_with_meta.h5ad
+      description: 
+        - Tyser human raw count
+        - has cell label
     2: 240925_adata_tyser_hvg.h5ad
+      description: 
+        - Tyser human processed 
+        - has cell label
+        - integrated (as reference)
+    3: adata_tyser_10_24_24.h5ad
+      description: 
+        - Tyser human processed 
+        - has cell label
