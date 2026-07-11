@@ -34,13 +34,13 @@ source activate-venv
 ### Register an IPython kernel *(optional)*
 
 ```bash
-uv run ipython kernel install --name 'any name you want' --user
+uv run ipython kernel install --name 'any name (select later inside jupyterlab or vscode)' --user
 ```
 
 ### Add packages
 
 ```bash
-uv add <any package you want>
+uv add <any package (separated by space)>
 ```
 
 ## Uninstalling uv
