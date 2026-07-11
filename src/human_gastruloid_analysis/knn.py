@@ -133,13 +133,14 @@ def weighted_knn_transfer(
             else:
                 pred_label = best_label
 
+            j_loc = pred_labels.columns.get_loc(j)
             if mode == "package":
-                uncertainties.iloc[i][j] = max(1 - best_prob, 0)
+                uncertainties.iloc[i, j_loc] = max(1 - best_prob, 0)
 
             else:
                 raise Exception("Inquery Mode!")
 
-            pred_labels.iloc[i][j] = pred_label
+            pred_labels.iloc[i, j_loc] = pred_label
 
     print("finished!")
 

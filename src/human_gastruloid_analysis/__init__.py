@@ -13,9 +13,16 @@ from pathlib import Path
 import yaml
 from tqdm.auto import tqdm
 
+from .knn import weighted_knn_trainer, weighted_knn_transfer
 from .models import model_table
 
-__all__ = ["model_table", "download_data", "list_data"]
+__all__ = [
+    "model_table",
+    "download_data",
+    "list_data",
+    "weighted_knn_trainer",
+    "weighted_knn_transfer",
+]
 
 #: Zenodo record id that hosts the datasets. Set this once after uploading, e.g.
 #: ``import human_gastruloid_analysis as hga; hga.ZENODO_RECORD_ID = "1234567"``.
