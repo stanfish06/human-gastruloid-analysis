@@ -1,6 +1,6 @@
-# 2d-gastruloid-analysis
+# human-gastruloid-analysis
 
-Analysis of human 2D gastruloid data
+Analysis of human gastruloid data
 
 ## Data
 
