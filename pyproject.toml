@@ -3,7 +3,7 @@ build-backend = "uv_build"
 requires = [ "uv-build>=0.11.7,<0.12" ]
 
 [project]
-name = "2d-gastruloid-analysis"
+name = "human-gastruloid-analysis"
 version = "0.1.0"
 description = "Analysis of 2d human gastruloid scRNA-seq data, with integration to human and monkey"
 readme = "README.md"
@@ -25,5 +25,5 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "ruff>=0.15.21",
+  "ruff>=0.15.21",
 ]
