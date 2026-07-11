@@ -1,93 +1,121 @@
+# Registry of datasets published alongside this project.
+#
+# Processed datasets are hosted on Zenodo, record 21313315
+# (https://zenodo.org/records/21313315, DOI 10.5281/zenodo.21313315), one
+# ``<subdir>.tar.gz`` archive per dataset. Raw GEO files are fetched from NCBI.
+#
+# Each top-level key is a dataset (a "set" of files that is uploaded to Zenodo
+# as a single ``<subdir>.tar.gz`` archive). Fields:
+#
+#   subdir      folder the files live in, created under the download directory.
+#   link        paper / publication the data belongs to.
+#   source      where the raw data originally came from (optional).
+#   need_unzip  true  -> the whole set is one tar.gz that is extracted on download.
+#               false -> each file in ``checklist`` is downloaded as-is (no extract).
+#   archive     (optional) tar.gz name on Zenodo; defaults to "<subdir>.tar.gz".
+#   url         (optional) explicit download URL, overrides the Zenodo lookup.
+#   record_id   (optional) per-dataset Zenodo record id, overrides the global one.
+#   checklist   list of files, each with a "file" name and a "description"
+#               (a list of free-text lines). Add new files here.
+
 IH-2025-nature:
   subdir: IH-2025-nature-data
   link: https://www.nature.com/articles/s41592-025-02669-4
-  source: 
+  source:
   need_unzip: true
+  record_id: "21313315"
   checklist:
-    1: adata_timeseries_old_48-96h.h5ad
+    - file: adata_timeseries_old_48-96h.h5ad
       description:
-        - 2D gastruloid data from day 2 to day 4 
+        - 2D gastruloid data from day 2 to day 4
         - raw count
-    2: adata_timeseries_old_48-96h_new_D6-10_filtered_qc.h5ad
-      description: 
+    - file: adata_timeseries_old_48-96h_new_D6-10_filtered_qc.h5ad
+      description:
         - 2D gastruloid data from day 2 to day 10
         - raw count
-    3: 240925_adata_combined.h5ad
-      description: 
-        - 2D gastruloid data from day 2 to day 4 
+    - file: 240925_adata_combined.h5ad
+      description:
+        - 2D gastruloid data from day 2 to day 4
         - integrated (old, dont use)
         - anndata.X is normalized (library size+log1p)
         - highly variable genes selected
-        - anndata.raw has all genes, normalized (library size+log1p) 
-    4: adata_timeseries_all_cc_hvg1000_leiden10_23_v3.h5ad
-      description: 
-        - 2D gastruloid data from day 2 to day 4 
+        - anndata.raw has all genes, normalized (library size+log1p)
+    - file: adata_timeseries_all_cc_hvg1000_leiden10_23_v3.h5ad
+      description:
+        - 2D gastruloid data from day 2 to day 4
         - integrated (use this)
         - anndata.X is normalized (library size+log1p)
         - highly variable genes selected
-        - anndata.raw has all genes, normalized (library size+log1p) 
+        - anndata.raw has all genes, normalized (library size+log1p)
         - X_scVI_cc is the scvi latent coordinates
-    5: adata_2020_force_9000.h5ad
-      description: 
+    - file: adata_2020_force_9000.h5ad
+      description:
         - first 42h gastruloid data
-    6: adata_2021_BMP_contorl.h5ad
-      description: 
+    - file: adata_2021_BMP_contorl.h5ad
+      description:
         - second 42h gastruloid data
-    7: MP_old_48-96h_new_D6-10_meta.csv
-      description: 
+    - file: MP_old_48-96h_new_D6-10_meta.csv
+      description:
         - meta for 2D gastruloid data from day 2 to day 10
         - store in anndata.obs
-    8: MP_old_48-96h_scvi_coords
-      description: 
+    - file: MP_old_48-96h_scvi_coords.csv
+      description:
         - scvi latent coordinates for 2D gastruloid data from day 2 to day 4
+
 Zhai-2020-nature:
   subdir: Zhai-2022-nature-data
   link: https://www.nature.com/articles/s41586-022-05526-y
-  source: 
+  source:
   need_unzip: true
+  record_id: "21313315"
   checklist:
-    1: craig_new_monkey_meta_selected.h5ad
-      description: 
+    - file: craig_new_monkey_meta_selected.h5ad
+      description:
         - CS8 monkey data
         - raw count
         - it was remapped, not the same count matrix as the original paper
-    2: adata_integrate_to_monkey.h5ad
-      description: 
-        - integrated data with Tyser human, IH gastruloid, and Zhai CS8 monkey 
-    3: MP_human_map2monkey_meta.csv
-      description: 
+    - file: adata_integrate_to_monkey.h5ad
+      description:
+        - integrated data with Tyser human, IH gastruloid, and Zhai CS8 monkey
+    - file: MP_human_map2monkey_meta.csv
+      description:
         - meta after mapping Tyser human and IH gastruloid to Zhai CS8 monkey
-    4: MP_human_map2monkey_scanvi_coords.csv
-      description: 
+    - file: MP_human_map2monkey_scanvi_coords.csv
+      description:
         - scanvi coordinates after mapping Tyser human and IH gastruloid to Zhai CS8 monkey
+
 Zhai-2020-nature-ncbi:
   subdir: Zhai-2022-nature-data
   link: https://www.nature.com/articles/s41586-022-05526-y
   source: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193007
   need_unzip: false
   checklist:
-    1: GSE193007_MFE-filtered_feature_bc_matrix.tar.gz
-      description: 
+    - file: GSE193007_MFE-filtered_feature_bc_matrix.tar.gz
+      url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193007/suppl/GSE193007_MFE-filtered_feature_bc_matrix.tar.gz
+      description:
         - raw file
-    2: GSE193007_MFE56636-processed.tar.gz
-      description: 
+    - file: GSE193007_MFE56636-processed.tar.gz
+      url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193007/suppl/GSE193007_MFE56636-processed.tar.gz
+      description:
         - raw file
+
 Tyser-2021-nature:
   subdir: Tyser-2021-nature-data
   link: https://www.nature.com/articles/s41586-021-04158-y
-  source: 
+  source:
   need_unzip: true
+  record_id: "21313315"
   checklist:
-    1: human_ref_with_meta.h5ad
-      description: 
+    - file: human_ref_with_meta.h5ad
+      description:
         - Tyser human raw count
         - has cell label
-    2: 240925_adata_tyser_hvg.h5ad
-      description: 
-        - Tyser human processed 
+    - file: 240925_adata_tyser_hvg.h5ad
+      description:
+        - Tyser human processed
         - has cell label
         - integrated (as reference)
-    3: adata_tyser_10_24_24.h5ad
-      description: 
-        - Tyser human processed 
+    - file: adata_tyser_10_24_24.h5ad
+      description:
+        - Tyser human processed
         - has cell label

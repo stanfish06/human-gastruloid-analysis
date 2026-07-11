@@ -951,8 +951,10 @@ dependencies = [
     { name = "jupyterlab" },
     { name = "mellon" },
     { name = "notebook" },
+    { name = "pyyaml" },
     { name = "scanpy" },
     { name = "scvi-tools" },
+    { name = "tqdm" },
 ]
 
 [package.dev-dependencies]
@@ -966,8 +968,10 @@ requires-dist = [
     { name = "jupyterlab", specifier = ">=4.6.1" },
     { name = "mellon", specifier = ">=1.7.1" },
     { name = "notebook", specifier = ">=7.6" },
+    { name = "pyyaml", specifier = ">=6" },
     { name = "scanpy", specifier = ">=1.12.2" },
     { name = "scvi-tools", specifier = ">=1.5.0.post1" },
+    { name = "tqdm", specifier = ">=4" },
 ]
 
 [package.metadata.requires-dev]
